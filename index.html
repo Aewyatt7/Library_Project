@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="app.js" defer></script>
     <title>Library Project</title>
   </head>
   <body>
@@ -16,17 +17,56 @@
     >
       <div>
         <h1>Library Project</h1>
+        <form id="addBookForm">
         <div id="library">
           <!-- Add table here -->
-          <table id="table" style="min-width: 680px; margin: 2rem">
+          <table id="bookTable" style="min-width: 680px; margin: 2rem">
             <thead>
+              <tr>
+                <th> <!-- Title -->
+                  <label for="title">Title:</label>
+                  <input type="text" id="title" name="title" required/>
+                </th>
+                <th><!--Author-->
+                  <label for= "author">Author:</label>
+                  <input type="text" id="author" name="author" required/>
+                </th>
+                <th><!--Read-->
+                  <label for="read">Read</label>
+                  <input type="checkbox" id="read" name="read"/>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
               <tr>
                 <th>Title</th>
                 <th>Author</th>
                 <th>Read</th>
               </tr>
-            </thead>
-            <tbody>
+              <tr>
+                <td>Atomic Habbits</td>
+                <td>James Clear</td>
+                <td>
+                <input
+                type="checkbox"
+                name="read"
+                class="readLibraryCheckbox"
+                checked
+                disabled
+              />
+              </tr>
+              <tr>
+                <td>Eloquent Javascript</td>
+                <td>Marijin Haverbeke</td>
+                <td>
+                <input
+                    type="checkbox"
+                    name="read"
+                    class="readLibraryCheckbox"
+                    checked
+                    disabled
+                />
+              </tr>
               <tr>
                 <td>Name of the Wind</td>
                 <td>Patrick Rothfuss</td>
@@ -34,17 +74,20 @@
                   <input
                     type="checkbox"
                     name="read"
-                    id="readLibraryCheckbox"
+                    class="readLibraryCheckbox"
                     checked
                     disabled
-                  />
+                 />
                 </td>
               </tr>
             </tbody>
           </table>
+          <div>
+            <button id="addBookBtn">Add Book</button>
+          </div>
+        </form>
         </div>
     </main>
 
-    <script src="app.js"></script>
   </body>
 </html>
